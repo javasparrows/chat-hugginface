@@ -10,7 +10,7 @@ def run_bot(model, tokenizer, first_text, you_text, max_count=10):
         # ユーザからの入力を受け取る
         user_input = input(you_text)  # "あなた: "
 
-        # ユーザの入力をエンコードしてテンソルに変換
+        # ユーザの入力をencodeしてテンソルに変換
         input_ids = tokenizer.encode(user_input, return_tensors='pt')
         attention_mask = (input_ids != tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 0).int()
 
